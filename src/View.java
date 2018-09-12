@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import javax.swing.JPanel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -10,6 +11,9 @@ import java.awt.Color;
 import javax.imageio.ImageIO;
 import java.awt.event.WindowEvent;
 import java.awt.event.MouseListener;
+import java.awt.*;
+import java.awt.geom.Line2D;
+import javax.swing.*;
 
 public class View extends JFrame implements ActionListener {
 	Controller controller;
@@ -24,7 +28,7 @@ public class View extends JFrame implements ActionListener {
 
 		// Make the game window
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setTitle("Moving Robot");
+		this.setTitle("Pathfinding");
 		this.setSize(1203, 636);
 		this.panel = new MyPanel();
 		this.panel.addMouseListener(controller);
@@ -44,7 +48,7 @@ public class View extends JFrame implements ActionListener {
 		Image image_robot;
 
 		MyPanel() throws Exception {
-			this.image_robot = ImageIO.read(new File("images/robot_blue.png"));
+			this.image_robot = ImageIO.read(new File("../images/Wall-e.png"));
 		}
 
 		void drawTerrain(Graphics g) {
@@ -91,7 +95,11 @@ public class View extends JFrame implements ActionListener {
 			// Draw the view
 			drawTerrain(g);
 			drawSprites(g);
-			controller.agent.drawPlan(g, model);
+			controller.agent.drawFrontier(g);
+			Graphics2D g2 = (Graphics2D) g;
+			g2.setStroke(new BasicStroke(5));
+			controller.agent.drawPath(g2, model);
+
 		}
 	}
 }
