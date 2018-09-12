@@ -2,8 +2,7 @@
 
 
 
-## Examples
-
+## Comparisons
 
 ### 1
 
@@ -19,6 +18,12 @@ A Star Search
 
 ### 2
 
+Uniform Cost Search 
+
+![Alt Text](https://media.giphy.com/media/bkhlzo3YMjmMJxeTJP/giphy.gif)
+
+A Star Search 
+
+![Alt Text](https://media.giphy.com/media/jyemUJEMX1fzCC69P0/giphy.gif)
 
 
-### 3
