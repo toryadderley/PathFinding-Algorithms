@@ -94,11 +94,11 @@ public class View extends JFrame implements ActionListener {
 
 			// Draw the view
 			drawTerrain(g);
-			drawSprites(g);
 			controller.agent.drawFrontier(g);
 			Graphics2D g2 = (Graphics2D) g;
 			g2.setStroke(new BasicStroke(5));
 			controller.agent.drawPath(g2, model);
+			drawSprites(g);
 
 		}
 	}

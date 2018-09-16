@@ -56,7 +56,7 @@ public class Agent {
 			g.setColor(color2);
 		if (frontier != null)
 			for (State state : frontier)
-				g.fillOval(state.getX(), state.getY(), 12, 12);
+				g.fillOval(state.getX(), state.getY(), 10, 10);
 	}
 
 	void drawPath(Graphics2D g, Model m) {
@@ -72,6 +72,7 @@ public class Agent {
 	void explore(float x, float y, Model m) {
 		float x2 = x;
 		float y2 = y;
+
 		int x1 = (int) (m.getX() / 10) * 10;
 		int y1 = (int) (m.getY() / 10) * 10;
 		int xDest = (int) (m.getDestinationX() / 10) * 10;
@@ -106,7 +107,7 @@ public class Agent {
 				m.setDestination(x2, y2);
 				solutionPath.clear();
 			}
-			// Collections.reverse(solutionPath);
+			Collections.reverse(solutionPath);
 
 		}
 

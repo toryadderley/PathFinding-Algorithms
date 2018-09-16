@@ -1,7 +1,6 @@
 import java.lang.*;
 import java.util.ArrayList;
 
-//Figure out what a normal  class should have 
 public class State {
 
     private State parentState;
@@ -17,7 +16,7 @@ public class State {
 
         this.cost = cost;
         this.parentState = parentState;
-        this.x = Math.round(x / 10) * 10;// why
+        this.x = Math.round(x / 10) * 10;
         this.y = Math.round(y / 10) * 10;
 
     }
@@ -57,7 +56,7 @@ public class State {
         return newCost;
     }
 
-    public double findHeuristic(float x, float y) { // Edit
+    public double findHeuristic(float x, float y) {
         double newHeuristic;
         double xx = this.getX() - model.getDestinationX();
         double yy = this.getY() - model.getDestinationY();
@@ -133,7 +132,7 @@ public class State {
 
     }
 
-    public boolean isEqual(State other) { // E D I T
+    public boolean isEqual(State other) {
         if (this.x == other.getX() && this.y == other.getY())
             return true;
         return false;

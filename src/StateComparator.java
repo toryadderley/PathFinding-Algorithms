@@ -1,7 +1,5 @@
 import java.util.Comparator;
 
-//Alter name and logic
-
 public class StateComparator implements Comparator<State> {
 
     public int compare(State x, State y) {
